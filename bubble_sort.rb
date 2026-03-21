@@ -1,3 +1,4 @@
+require 'pry-byebug'
 =begin
   START
 
@@ -21,3 +22,29 @@ RETURN array
 
 END
 =end
+
+#Create bubble sort method
+def bubble_sort array
+    swapped = true
+
+    #Create while loop
+    while swapped do 
+
+      #Set swapped to false to reset each pass
+      swapped = false
+
+      (0...array.length - 1).each do |i|
+        if array[i] > array[i + 1]
+            array[i], array[i + 1] = array[i + 1], array[i]
+            swapped = true
+        end
+      end
+      
+    end
+
+    #Return swapped array
+    array
+end
+
+#Example data
+puts bubble_sort([4,3,78,2,0,2])
